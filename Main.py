@@ -4,7 +4,7 @@ from msvcrt import getch
 from os import system as execute
 
 def Main():
-
+	
 	def finder(metadata, lst):
 		_search_url = ("http://www.todaytvseries2.com/search-series?searchword={}&searchphrase=all&limit=0".format(metadata))
 		_search_data = requests.get(_search_url).content.decode('utf-8')
@@ -38,6 +38,7 @@ def Main():
 					seasons = re.findall(r'</span>[A-z]{8}[ ][A-z]{6}[ ]([0-9]{1,2})</h3>', req)
 					seasons.sort()
 					execute("cls")
+					
 					print(f" Tv-Series :{title}({sizenfo[0][0]}) {sizenfo[0][1]} {sizenfo[0][2]} {sizenfo[0][3]}\n")
 					for x in seasons:
 						print(f"{title}Season {x}")
